@@ -1,10 +1,863 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=https://husahyug1-secondary.z5.web.core.windows.net">
-  <script>
-    window.location.replace("https://husahyug1-secondary.z5.web.core.windows.net");
-  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KR3ML1G39V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KR3ML1G39V');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hearth & Flame — Home Cooking Elevated</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FDFBF7;
+    --charcoal: #1C1C1A;
+    --rust: #C4501A;
+    --rust-light: #E8713F;
+    --sage: #6B7C5C;
+    --gold: #C8972A;
+    --muted: #7A7469;
+    --border: rgba(28,28,26,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(253,251,247,0.9); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--charcoal); text-decoration: none; }
+  .nav-logo span { color: var(--rust); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--charcoal); }
+  .nav-links a.highlight { color: var(--rust); font-weight: 500; }
+  .nav-cta { background: var(--charcoal); color: var(--cream); border: none; padding: 10px 22px; border-radius: 24px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--rust); }
+
+  /* ── HERO ── */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; overflow: hidden; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 64px 80px 72px; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--rust); }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(48px, 5.5vw, 72px); line-height: 1.08; font-weight: 700; letter-spacing: -1.5px; margin-bottom: 28px; }
+  .hero h1 em { font-style: italic; color: var(--rust); }
+  .hero-sub { font-size: 17px; line-height: 1.7; color: var(--muted); max-width: 400px; margin-bottom: 44px; font-weight: 300; }
+  .hero-actions { display: flex; align-items: center; gap: 20px; }
+  .btn-primary { background: var(--rust); color: #fff; padding: 15px 32px; border-radius: 32px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; box-shadow: 0 4px 20px rgba(196,80,26,0.3); }
+  .btn-primary:hover { background: #A83D10; transform: translateY(-2px); }
+  .btn-ghost { font-size: 14px; font-weight: 500; color: var(--charcoal); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: gap 0.2s; }
+  .btn-ghost:hover { gap: 14px; }
+  .hero-stats { display: flex; gap: 36px; margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--border); }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; line-height: 1; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .hero-right { position: relative; background: var(--cream); overflow: hidden; }
+  .hero-image-grid { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 3px; padding: 3px; }
+  .hero-img-cell { background: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 80px; }
+  .hero-img-cell:nth-child(1) { grid-row: 1 / 3; font-size: 100px; background: #EDE5D5; }
+  .hero-img-cell:nth-child(2) { background: #E8E0CC; font-size: 72px; }
+  .hero-img-cell:nth-child(3) { background: #DDD5C1; font-size: 64px; }
+  .food-emoji { animation: float 6s ease-in-out infinite; display: block; }
+  .hero-img-cell:nth-child(2) .food-emoji { animation-delay: 1.5s; }
+  .hero-img-cell:nth-child(3) .food-emoji { animation-delay: 3s; }
+  .hero-tag { position: absolute; bottom: 32px; right: 32px; background: var(--charcoal); color: var(--cream); padding: 16px 20px; border-radius: 14px; z-index: 2; text-align: center; }
+  .hero-tag-num { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--gold); }
+  .hero-tag-text { font-size: 11px; color: rgba(245,240,232,0.6); margin-top: 2px; letter-spacing: 0.06em; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap { background: var(--rust); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+  .marquee-track { display: inline-block; animation: marquee 28s linear infinite; }
+  .marquee-item { display: inline-flex; align-items: center; gap: 16px; margin-right: 48px; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(253,251,247,0.9); }
+  .marquee-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(253,251,247,0.4); }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* ── SECTIONS ── */
+  .section { padding: 100px 72px; }
+  .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; }
+  .section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .section-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--rust); }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px,3.5vw,48px); font-weight: 700; letter-spacing: -0.8px; line-height: 1.1; }
+  .section-link { font-size: 14px; font-weight: 500; color: var(--rust); text-decoration: none; display: flex; align-items: center; gap: 6px; padding-bottom: 4px; border-bottom: 1px solid var(--rust); transition: gap 0.2s; }
+  .section-link:hover { gap: 12px; }
+
+  /* ── RECIPE CARDS ── */
+  .recipe-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .recipe-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; cursor: pointer; }
+  .recipe-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(28,28,26,.10); }
+  .recipe-card-thumb { height: 220px; display: flex; align-items: center; justify-content: center; font-size: 80px; position: relative; }
+  .card-bg-1{background:linear-gradient(135deg,#F0E8D5,#E8DCC8)} .card-bg-2{background:linear-gradient(135deg,#E8EFE0,#D8E6CC)} .card-bg-3{background:linear-gradient(135deg,#F5E8E0,#EDD8CC)} .card-bg-4{background:linear-gradient(135deg,#EDE8F5,#DDD4EC)} .card-bg-5{background:linear-gradient(135deg,#F5F0E0,#EDE4CC)} .card-bg-6{background:linear-gradient(135deg,#E0F0EC,#CCE4E0)}
+  .card-tag { position: absolute; top: 16px; left: 16px; background: rgba(253,251,247,.92); padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 500; }
+  .card-body { padding: 20px 22px 24px; }
+  .card-meta { display: flex; gap: 14px; margin-bottom: 10px; }
+  .card-meta-item { font-size: 11px; color: var(--muted); }
+  .card-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.25; margin-bottom: 8px; }
+  .card-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .card-chef { font-size: 12px; color: var(--muted); }
+  .card-chef strong { color: var(--charcoal); font-weight: 500; }
+  .card-arrow { width: 32px; height: 32px; border-radius: 50%; background: var(--cream); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+  .recipe-card:hover .card-arrow { background: var(--rust); border-color: var(--rust); }
+  .recipe-card:hover .card-arrow svg { stroke: white; }
+
+  /* ── CATEGORIES ── */
+  .categories-section { background: var(--cream); padding: 80px 72px; }
+  .cat-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 16px; margin-top: 48px; }
+  .cat-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 16px; text-align: center; cursor: pointer; transition: all 0.22s; }
+  .cat-card:hover { background: var(--charcoal); color: var(--cream); border-color: var(--charcoal); transform: translateY(-4px); }
+  .cat-card:hover .cat-label { color: rgba(245,240,232,.6); }
+  .cat-icon { font-size: 36px; display: block; margin-bottom: 10px; }
+  .cat-name { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+  .cat-label { font-size: 11px; color: var(--muted); transition: color 0.22s; }
+
+  /* ── FEATURE ── */
+  .feature-section { padding: 100px 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .feature-visual { background: var(--cream); border-radius: 28px; height: 500px; display: flex; align-items: center; justify-content: center; font-size: 120px; }
+  .feature-quote { font-family: 'Playfair Display', serif; font-size: clamp(26px,3vw,38px); font-weight: 400; font-style: italic; line-height: 1.3; margin: 24px 0 28px; padding-left: 24px; position: relative; }
+  .feature-quote::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: var(--rust); border-radius: 2px; }
+  .feature-body { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; font-weight: 300; }
+  .feature-author { display: flex; align-items: center; gap: 14px; padding-top: 24px; border-top: 1px solid var(--border); margin-top: 32px; }
+  .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--rust); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .author-name { font-size: 14px; font-weight: 500; }
+  .author-role { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ── NEWSLETTER ── */
+  .newsletter { background: var(--charcoal); padding: 80px 72px; display: flex; align-items: center; justify-content: space-between; gap: 60px; }
+  .newsletter-text { flex: 1; }
+  .newsletter-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); margin-bottom: 16px; }
+  .newsletter-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--cream); line-height: 1.15; letter-spacing: -0.6px; margin-bottom: 12px; }
+  .newsletter-sub { font-size: 15px; color: rgba(245,240,232,.55); font-weight: 300; line-height: 1.6; }
+  .newsletter-form { flex: 1; max-width: 420px; }
+  .newsletter-input-wrap { display: flex; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 40px; overflow: hidden; padding: 5px 5px 5px 20px; }
+  .newsletter-input { flex: 1; background: transparent; border: none; outline: none; color: var(--cream); font-family: 'DM Sans',sans-serif; font-size: 15px; }
+  .newsletter-input::placeholder { color: rgba(245,240,232,.3); }
+  .newsletter-btn { background: var(--rust); color: #fff; border: none; padding: 12px 24px; border-radius: 32px; font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; white-space: nowrap; }
+  .newsletter-note { font-size: 12px; color: rgba(245,240,232,.3); margin-top: 12px; }
+
+  /* ── TIPS ── */
+  .tips-strip { padding: 80px 72px; background: var(--cream); }
+  .tips-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-top: 48px; }
+  .tip-block { background: var(--warm-white); padding: 36px 28px; border: 1px solid var(--border); transition: background 0.2s; }
+  .tip-block:first-child { border-radius: 20px 0 0 20px; }
+  .tip-block:last-child { border-radius: 0 20px 20px 0; }
+  .tip-block:hover { background: var(--rust); }
+  .tip-block:hover .tip-title, .tip-block:hover .tip-body, .tip-block:hover .tip-num { color: rgba(253,251,247,.9); }
+  .tip-num { font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: .1em; margin-bottom: 16px; transition: color 0.2s; }
+  .tip-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .tip-title { font-family: 'Playfair Display',serif; font-size: 18px; font-weight: 700; margin-bottom: 10px; transition: color 0.2s; }
+  .tip-body { font-size: 13px; color: var(--muted); line-height: 1.65; transition: color 0.2s; }
+
+  /* ═══════════════════════════════════
+     GOOGLE ADS POLICIES SECTION
+  ═══════════════════════════════════ */
+  .policy-hero {
+    background: var(--charcoal); padding: 80px 72px 60px;
+    position: relative; overflow: hidden;
+  }
+  .policy-hero::before { content:''; position:absolute; top:-80px; right:-80px; width:400px; height:400px; border-radius:50%; background:rgba(196,80,26,.08); }
+  .policy-hero::after { content:''; position:absolute; bottom:-60px; left:25%; width:300px; height:300px; border-radius:50%; background:rgba(107,124,92,.06); }
+  .policy-hero-inner { position:relative; z-index:1; max-width:760px; }
+  .policy-hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(196,80,26,.18); border:1px solid rgba(196,80,26,.35); color:#E8713F; font-size:11px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:20px; margin-bottom:24px; }
+  .policy-hero h2 { font-family:'Playfair Display',serif; font-size:clamp(32px,4vw,52px); font-weight:700; color:var(--cream); line-height:1.1; letter-spacing:-.8px; margin-bottom:18px; }
+  .policy-hero p { font-size:16px; color:rgba(245,240,232,.6); line-height:1.8; font-weight:300; max-width:580px; margin-bottom:28px; }
+  .policy-last-updated { font-size:12px; color:rgba(245,240,232,.3); letter-spacing:.04em; }
+
+  .policy-nav-tabs { background:var(--cream); border-bottom:1px solid var(--border); padding:0 72px; display:flex; gap:0; overflow-x:auto; position:sticky; top:64px; z-index:50; }
+  .policy-nav-tabs::-webkit-scrollbar { display:none; }
+  .ptab-link { font-size:13px; font-weight:500; color:var(--muted); padding:18px 20px; border-bottom:2px solid transparent; cursor:pointer; white-space:nowrap; text-decoration:none; display:block; transition:color 0.2s, border-color 0.2s; }
+  .ptab-link:hover { color:var(--charcoal); }
+  .ptab-link.active { color:var(--rust); border-bottom-color:var(--rust); }
+
+  .policy-body { max-width:960px; margin:0 auto; padding:60px 72px 80px; }
+
+  .food-callout { background:linear-gradient(135deg,#FAEEDA,#F5E8D0); border:1px solid rgba(200,151,42,.3); border-radius:16px; padding:28px 32px; margin-bottom:40px; display:flex; gap:20px; align-items:flex-start; }
+  .food-callout-icon { font-size:28px; flex-shrink:0; margin-top:2px; }
+  .food-callout-title { font-size:15px; font-weight:500; color:#633806; margin-bottom:8px; }
+  .food-callout-text { font-size:13px; color:#854F0B; line-height:1.7; }
+
+  .pcat-header { display:flex; align-items:center; gap:16px; padding:40px 0 20px; margin-bottom:8px; border-top:1px solid var(--border); }
+  .pcat-header:first-of-type { border-top:none; padding-top:0; }
+  .pcat-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+  .pcat-icon.red{background:#FCEBEB} .pcat-icon.amber{background:#FAEEDA} .pcat-icon.blue{background:#E6F1FB} .pcat-icon.green{background:#EAF3DE}
+  .pcat-title { font-family:'Playfair Display',serif; font-size:28px; font-weight:700; letter-spacing:-.3px; }
+  .pcat-subtitle { font-size:14px; color:var(--muted); margin-top:3px; }
+  .pcat-intro { font-size:15px; color:var(--muted); line-height:1.75; margin-bottom:28px; padding:18px 22px; background:var(--cream); border-radius:12px; border-left:3px solid; }
+  .pcat-intro.red-accent{border-left-color:#E24B4A} .pcat-intro.amber-accent{border-left-color:#EF9F27} .pcat-intro.blue-accent{border-left-color:#378ADD} .pcat-intro.green-accent{border-left-color:#1D9E75}
+
+  .policy-item { border:1px solid var(--border); border-radius:14px; margin-bottom:10px; overflow:hidden; transition:box-shadow 0.2s; }
+  .policy-item:hover { box-shadow:0 4px 20px rgba(28,28,26,.07); }
+  .policy-item-header { display:flex; align-items:center; justify-content:space-between; padding:18px 22px; cursor:pointer; background:var(--warm-white); transition:background 0.15s; user-select:none; }
+  .policy-item-header:hover, .policy-item-header.open { background:var(--cream); }
+  .policy-item-left { display:flex; align-items:center; gap:14px; }
+  .policy-item-tag { font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:3px 8px; border-radius:6px; flex-shrink:0; }
+  .tag-red{background:#FCEBEB;color:#A32D2D} .tag-amber{background:#FAEEDA;color:#854F0B} .tag-blue{background:#E6F1FB;color:#185FA5} .tag-green{background:#EAF3DE;color:#3B6D11}
+  .policy-item-name { font-size:15px; font-weight:500; }
+  .policy-item-chevron { width:24px; height:24px; border-radius:50%; background:rgba(28,28,26,.08); display:flex; align-items:center; justify-content:center; transition:transform 0.25s, background 0.15s; flex-shrink:0; }
+  .policy-item-header.open .policy-item-chevron { transform:rotate(180deg); background:var(--rust); }
+  .policy-item-header.open .policy-item-chevron svg { stroke:white; }
+  .policy-item-body { display:none; padding:4px 22px 22px; background:var(--cream); }
+  .policy-item-body.open { display:block; }
+  .policy-item-desc { font-size:14px; color:var(--charcoal); line-height:1.75; padding-top:4px; margin-bottom:14px; }
+  .policy-examples { background:var(--warm-white); border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-top:10px; }
+  .policy-examples-label { font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+  .policy-examples ul { list-style:none; }
+  .policy-examples li { font-size:13px; color:var(--muted); line-height:1.6; padding:5px 0 5px 16px; border-bottom:1px solid var(--border); position:relative; }
+  .policy-examples li:last-child { border-bottom:none; }
+  .policy-examples li::before { content:'·'; position:absolute; left:4px; color:var(--rust); font-weight:700; }
+
+  /* ── T&C SECTION ── */
+  .tnc-section { background:var(--cream); padding:80px 72px; border-top:1px solid var(--border); }
+  .tnc-inner { max-width:960px; margin:0 auto; }
+  .tnc-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:36px; }
+  .tnc-card { background:var(--warm-white); border:1px solid var(--border); border-radius:14px; padding:24px 26px; }
+  .tnc-card-num { font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--rust); margin-bottom:10px; }
+  .tnc-card-title { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; margin-bottom:10px; }
+  .tnc-card-body { font-size:13px; color:var(--muted); line-height:1.75; }
+
+  .enforcement-bar { background:var(--charcoal); margin:40px 0; border-radius:16px; padding:28px 32px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+  .enforcement-bar-icon { font-size:32px; flex-shrink:0; }
+  .enforcement-bar-title { font-size:16px; font-weight:500; color:var(--cream); margin-bottom:6px; }
+  .enforcement-bar-text { font-size:13px; color:rgba(245,240,232,.55); line-height:1.6; }
+  .enforcement-bar-link { margin-left:auto; flex-shrink:0; background:var(--rust); color:#fff; padding:10px 20px; border-radius:24px; font-size:13px; font-weight:500; text-decoration:none; white-space:nowrap; }
+
+  .enf-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:32px 0; }
+  .enf-card { background:var(--warm-white); border:1px solid var(--border); border-radius:14px; padding:24px; }
+  .enf-card-icon { font-size:24px; margin-bottom:12px; }
+  .enf-card-title { font-size:14px; font-weight:500; margin-bottom:8px; }
+  .enf-card-body { font-size:13px; color:var(--muted); line-height:1.65; }
+
+  .policy-cta-bar { background:var(--charcoal); border-radius:16px; padding:28px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  .policy-cta-bar-title { font-size:15px; font-weight:500; color:var(--cream); margin-bottom:6px; }
+  .policy-cta-bar-sub { font-size:13px; color:rgba(245,240,232,.5); }
+  .policy-cta-bar-btns { display:flex; gap:12px; flex-wrap:wrap; }
+  .cta-btn-primary { background:var(--rust); color:#fff; padding:11px 22px; border-radius:24px; font-size:13px; font-weight:500; text-decoration:none; }
+  .cta-btn-secondary { background:rgba(255,255,255,.08); color:var(--cream); padding:11px 22px; border-radius:24px; font-size:13px; font-weight:500; text-decoration:none; border:1px solid rgba(255,255,255,.15); }
+
+  /* ── FOOTER ── */
+  footer { padding: 60px 72px 36px; border-top: 1px solid var(--border); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+  .footer-brand-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-top: 14px; max-width: 260px; }
+  .footer-col-title { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--charcoal); margin-bottom: 18px; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--charcoal); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+
+  /* anchor offset for sticky nav */
+  .section-anchor { display:block; position:relative; top:-140px; visibility:hidden; }
+</style>
 </head>
-<body></body>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Hearth <span>&</span> Flame</a>
+  <ul class="nav-links">
+    <li><a href="#">Recipes</a></li>
+    <li><a href="#">Techniques</a></li>
+    <li><a href="#">Chefs</a></li>
+    <li><a href="#">Seasonal</a></li>
+    <li><a href="#ads-policies" class="highlight">Ads Policies</a></li>
+  </ul>
+  <button class="nav-cta">Get the App</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Curated Home Cooking</div>
+    <h1>Cook with <em>soul,</em><br>eat with joy.</h1>
+    <p class="hero-sub">Thousands of hand-tested recipes from kitchens around the world — from weeknight suppers to weekend feasts.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Explore Recipes</a>
+      <a href="#" class="btn-ghost">Watch technique videos <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h10.5M9 3.75 14.25 9 9 14.25"/></svg></a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">8,200+</div><div class="stat-label">Recipes</div></div>
+      <div><div class="stat-num">340</div><div class="stat-label">Techniques</div></div>
+      <div><div class="stat-num">1.2M</div><div class="stat-label">Home cooks</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-image-grid">
+      <div class="hero-img-cell"><span class="food-emoji">🍝</span></div>
+      <div class="hero-img-cell"><span class="food-emoji">🥗</span></div>
+      <div class="hero-img-cell"><span class="food-emoji">🍜</span></div>
+    </div>
+    <div class="hero-tag">
+      <div class="hero-tag-num">4.9★</div>
+      <div class="hero-tag-text">READER RATING</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Pasta <span class="marquee-dot"></span></span><span class="marquee-item">Stir Fry <span class="marquee-dot"></span></span><span class="marquee-item">Sourdough <span class="marquee-dot"></span></span><span class="marquee-item">Ramen <span class="marquee-dot"></span></span><span class="marquee-item">Risotto <span class="marquee-dot"></span></span><span class="marquee-item">Tacos <span class="marquee-dot"></span></span><span class="marquee-item">Paella <span class="marquee-dot"></span></span><span class="marquee-item">Curry <span class="marquee-dot"></span></span><span class="marquee-item">Dim Sum <span class="marquee-dot"></span></span><span class="marquee-item">Croissants <span class="marquee-dot"></span></span><span class="marquee-item">Tagine <span class="marquee-dot"></span></span><span class="marquee-item">Sushi <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pasta <span class="marquee-dot"></span></span><span class="marquee-item">Stir Fry <span class="marquee-dot"></span></span><span class="marquee-item">Sourdough <span class="marquee-dot"></span></span><span class="marquee-item">Ramen <span class="marquee-dot"></span></span><span class="marquee-item">Risotto <span class="marquee-dot"></span></span><span class="marquee-item">Tacos <span class="marquee-dot"></span></span><span class="marquee-item">Paella <span class="marquee-dot"></span></span><span class="marquee-item">Curry <span class="marquee-dot"></span></span><span class="marquee-item">Dim Sum <span class="marquee-dot"></span></span><span class="marquee-item">Croissants <span class="marquee-dot"></span></span><span class="marquee-item">Tagine <span class="marquee-dot"></span></span><span class="marquee-item">Sushi <span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- FEATURED RECIPES -->
+<section class="section">
+  <div class="section-header">
+    <div><div class="section-eyebrow">This week</div><h2 class="section-title">Featured recipes</h2></div>
+    <a href="#" class="section-link">View all recipes →</a>
+  </div>
+  <div class="recipe-grid">
+    <div class="recipe-card"><div class="recipe-card-thumb card-bg-1"><span>🍝</span><div class="card-tag">Pasta</div></div><div class="card-body"><div class="card-meta"><span class="card-meta-item">⏱ 25 min</span><span class="card-meta-item">👤 2 servings</span><span class="card-meta-item">⭐ 4.9</span></div><div class="card-title">Cacio e Pepe with Toasted Pine Nuts</div><div class="card-desc">A Roman classic elevated with golden pine nuts and aged Pecorino — silky, peppery perfection.</div><div class="card-footer"><div class="card-chef">By <strong>Marco Vitale</strong></div><div class="card-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 7h9M7 2.5 11.5 7 7 11.5"/></svg></div></div></div></div>
+    <div class="recipe-card"><div class="recipe-card-thumb card-bg-2"><span>🥗</span><div class="card-tag">Salads</div></div><div class="card-body"><div class="card-meta"><span class="card-meta-item">⏱ 15 min</span><span class="card-meta-item">👤 4 servings</span><span class="card-meta-item">⭐ 4.7</span></div><div class="card-title">Roasted Peach & Burrata Salad</div><div class="card-desc">Summer stone fruit meets creamy burrata, peppery arugula, and a honey-balsamic drizzle.</div><div class="card-footer"><div class="card-chef">By <strong>Sophie Bernard</strong></div><div class="card-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 7h9M7 2.5 11.5 7 7 11.5"/></svg></div></div></div></div>
+    <div class="recipe-card"><div class="recipe-card-thumb card-bg-3"><span>🍜</span><div class="card-tag">Soups</div></div><div class="card-body"><div class="card-meta"><span class="card-meta-item">⏱ 50 min</span><span class="card-meta-item">👤 3 servings</span><span class="card-meta-item">⭐ 5.0</span></div><div class="card-title">Tonkotsu Ramen from Scratch</div><div class="card-desc">Rich pork bone broth simmered for hours, with hand-pulled noodles and a perfectly soft egg.</div><div class="card-footer"><div class="card-chef">By <strong>Kenji Mori</strong></div><div class="card-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 7h9M7 2.5 11.5 7 7 11.5"/></svg></div></div></div></div>
+    <div class="recipe-card"><div class="recipe-card-thumb card-bg-4"><span>🥘</span><div class="card-tag">Slow Cook</div></div><div class="card-body"><div class="card-meta"><span class="card-meta-item">⏱ 2 hrs</span><span class="card-meta-item">👤 6 servings</span><span class="card-meta-item">⭐ 4.8</span></div><div class="card-title">Moroccan Lamb Tagine</div><div class="card-desc">Fall-off-the-bone lamb braised with preserved lemon, olives, and a warming ras el hanout blend.</div><div class="card-footer"><div class="card-chef">By <strong>Fatima El Amine</strong></div><div class="card-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 7h9M7 2.5 11.5 7 7 11.5"/></svg></div></div></div></div>
+    <div class="recipe-card"><div class="recipe-card-thumb card-bg-5"><span>🧁</span><div class="card-tag">Baking</div></div><div class="card-body"><div class="card-meta"><span class="card-meta-item">⏱ 1 hr</span><span class="card-meta-item">👤 8 servings</span><span class="card-meta-item">⭐ 4.9</span></div><div class="card-title">Brown Butter Cardamom Cake</div><div class="card-desc">Nutty browned butter and fragrant cardamom in a tender crumb — topped with rose water glaze.</div><div class="card-footer"><div class="card-chef">By <strong>Lena Holst</strong></div><div class="card-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 7h9M7 2.5 11.5 7 7 11.5"/></svg></div></div></div></div>
+    <div class="recipe-card"><div class="recipe-card-thumb card-bg-6"><span>🥬</span><div class="card-tag">Vegan</div></div><div class="card-body"><div class="card-meta"><span class="card-meta-item">⏱ 30 min</span><span class="card-meta-item">👤 2 servings</span><span class="card-meta-item">⭐ 4.6</span></div><div class="card-title">Sesame Miso Glazed Eggplant</div><div class="card-desc">Caramelized eggplant halves lacquered in a sweet-savory miso glaze — deeply satisfying.</div><div class="card-footer"><div class="card-chef">By <strong>Yuki Tanaka</strong></div><div class="card-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 7h9M7 2.5 11.5 7 7 11.5"/></svg></div></div></div></div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-section">
+  <div class="section-eyebrow">Browse by type</div>
+  <h2 class="section-title">Every cuisine, every craving</h2>
+  <div class="cat-grid">
+    <div class="cat-card"><span class="cat-icon">🍳</span><div class="cat-name">Breakfast</div><div class="cat-label">412 recipes</div></div>
+    <div class="cat-card"><span class="cat-icon">🥗</span><div class="cat-name">Salads</div><div class="cat-label">318 recipes</div></div>
+    <div class="cat-card"><span class="cat-icon">🍝</span><div class="cat-name">Pasta</div><div class="cat-label">540 recipes</div></div>
+    <div class="cat-card"><span class="cat-icon">🥩</span><div class="cat-name">Grilling</div><div class="cat-label">286 recipes</div></div>
+    <div class="cat-card"><span class="cat-icon">🍰</span><div class="cat-name">Desserts</div><div class="cat-label">620 recipes</div></div>
+    <div class="cat-card"><span class="cat-icon">🌱</span><div class="cat-name">Vegan</div><div class="cat-label">374 recipes</div></div>
+  </div>
+</section>
+
+<!-- FEATURE -->
+<section class="feature-section">
+  <div class="feature-visual">🫕</div>
+  <div class="feature-content">
+    <div class="section-eyebrow">Chef's notes</div>
+    <div class="feature-quote">"Great cooking is 10% technique and 90% paying attention."</div>
+    <p class="feature-body">Every recipe on Hearth & Flame is tested multiple times in real home kitchens — not test labs. We cook with regular stoves, everyday ingredients, and the same distractions you face.</p>
+    <a href="#" class="btn-primary">Read our cooking philosophy</a>
+    <div class="feature-author">
+      <div class="author-avatar">👩‍🍳</div>
+      <div><div class="author-name">Claire Dupont</div><div class="author-role">Head of Recipe Development</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips-strip">
+  <div class="section-eyebrow">Kitchen wisdom</div>
+  <h2 class="section-title">Techniques worth knowing</h2>
+  <div class="tips-grid">
+    <div class="tip-block"><div class="tip-num">01 — KNIFE SKILLS</div><span class="tip-icon">🔪</span><div class="tip-title">Master the chef's knife</div><div class="tip-body">A sharp knife is safer than a dull one. Learn the pinch grip and rock chop to transform your prep speed.</div></div>
+    <div class="tip-block"><div class="tip-num">02 — HEAT CONTROL</div><span class="tip-icon">🔥</span><div class="tip-title">Read your pan, not the dial</div><div class="tip-body">Sizzle says everything. Learn what your food sounds like at the right temperature and stop overcooking.</div></div>
+    <div class="tip-block"><div class="tip-num">03 — SEASONING</div><span class="tip-icon">🧂</span><div class="tip-title">Season in layers</div><div class="tip-body">Add salt at every stage — not just at the end. Each layer builds depth that a final pinch can never replicate.</div></div>
+    <div class="tip-block"><div class="tip-num">04 — PATIENCE</div><span class="tip-icon">⏳</span><div class="tip-title">Let it rest</div><div class="tip-body">Meat, dough, and even sauces improve dramatically with resting time. Patience is the most underrated ingredient.</div></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-text">
+    <div class="newsletter-eyebrow">Weekly digest</div>
+    <div class="newsletter-title">Recipes in<br>your inbox.</div>
+    <p class="newsletter-sub">One email, every Friday. Seasonal recipes, chef tips, and what we're cooking this weekend.</p>
+  </div>
+  <div class="newsletter-form">
+    <div class="newsletter-input-wrap">
+      <input type="email" class="newsletter-input" placeholder="your@email.com">
+      <button class="newsletter-btn">Subscribe</button>
+    </div>
+    <p class="newsletter-note">No spam, ever. Unsubscribe at any time.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     GOOGLE ADS POLICIES & TERMS AND CONDITIONS
+════════════════════════════════════════════════════ -->
+<span class="section-anchor" id="ads-policies"></span>
+
+<!-- Policy Hero -->
+<div class="policy-hero">
+  <div class="policy-hero-inner">
+    <div class="policy-hero-badge">📋 Advertising Standards</div>
+    <h2>Google Ads Policies<br>& Terms and Conditions</h2>
+    <p>All advertising on Hearth & Flame is served through Google Ads (formerly Google AdWords). Every advertiser must comply with the policies below. This page compiles the complete set of Google Ads policies as they apply to this site.</p>
+    <div class="policy-last-updated">Last updated: April 2026 · Source: <a href="https://support.google.com/adspolicy/answer/6008942" target="_blank" style="color:rgba(232,113,63,.8);text-decoration:none;">Google Ads Policy Center</a></div>
+  </div>
+</div>
+
+<!-- Policy Tab Nav -->
+<div class="policy-nav-tabs">
+  <a class="ptab-link active" href="#pol-prohibited">🚫 Prohibited Content</a>
+  <a class="ptab-link" href="#pol-practices">⚠️ Prohibited Practices</a>
+  <a class="ptab-link" href="#pol-restricted">🔒 Restricted Content</a>
+  <a class="ptab-link" href="#pol-editorial">✏️ Editorial & Technical</a>
+  <a class="ptab-link" href="#pol-tnc">📄 Terms & Conditions</a>
+  <a class="ptab-link" href="#pol-enforcement">⚖️ Enforcement</a>
+</div>
+
+<!-- Policy Body -->
+<div class="policy-body">
+
+  <!-- Food site callout -->
+  <div class="food-callout">
+    <div class="food-callout-icon">🍳</div>
+    <div>
+      <div class="food-callout-title">Cooking & food website — key advertising considerations</div>
+      <div class="food-callout-text">As a food and recipe platform, Hearth & Flame is in a generally advertiser-friendly category. However, advertisers promoting food and beverage products, alcohol, dietary supplements, or healthcare products face additional restrictions. Notably, <strong>High Fat, Sugar, and Salt (HFSS) food and beverage ads</strong> require self-declaration for UK and EU audiences. All Google Ads policies below apply in full regardless of content category.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ 1. PROHIBITED CONTENT ═══════════════════ -->
+  <span class="section-anchor" id="pol-prohibited"></span>
+  <div class="pcat-header" style="border-top:none;padding-top:0;">
+    <div class="pcat-icon red">🚫</div>
+    <div><div class="pcat-title">Prohibited Content</div><div class="pcat-subtitle">Content that cannot be advertised on the Google Network under any circumstances</div></div>
+  </div>
+  <div class="pcat-intro red-accent">Google Ads prohibits certain categories absolutely — these are hard bans, not limitations. If your ad or destination site contains any of the following, it will be disapproved and repeated violations may result in account suspension.</div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-red">Prohibited</span><span class="policy-item-name">Counterfeit Goods</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Google Ads prohibits the sale or promotion of counterfeit goods — products bearing a trademark or logo that is identical to or substantially indistinguishable from a genuine brand's trademark. This policy applies to both ad content and the destination website or app.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Examples (non-exhaustive)</div><ul><li>Fake designer handbags, clothing, or footwear using real brand logos</li><li>Replica watches bearing a manufacturer's genuine trademark</li><li>Counterfeit food products mimicking established brand packaging</li><li>Any product deceptively presented as an authentic branded item</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-red">Prohibited</span><span class="policy-item-name">Dangerous Products or Services</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Google does not allow the promotion of products or services that cause damage, harm, or injury. This covers a broad range of physical and digital dangers both online and offline.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Examples (non-exhaustive)</div><ul><li>Recreational drugs (chemical or herbal) and psychoactive substances</li><li>Equipment designed to facilitate drug use</li><li>Weapons, ammunition, explosive materials, and fireworks</li><li>Instructions for making explosives or other harmful products</li><li>Tobacco products and related accessories</li><li>Products that endanger health, safety, or security</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-red">Prohibited</span><span class="policy-item-name">Enabling Dishonest Behavior</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Google values honesty and fairness. It prohibits products or services designed to enable users to deceive, defraud, or harm others — including tools, software, and services that facilitate dishonest activity.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Examples (non-exhaustive)</div><ul><li>Hacking software or instructions for unauthorized system access</li><li>Services designed to artificially inflate ad or website traffic</li><li>Fake identity documents, diplomas, or fraudulent credentials</li><li>Academic cheating services (essay mills, exam proxy services)</li><li>Spy software or stalkerware that conceals itself from device owners</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-red">Prohibited</span><span class="policy-item-name">Inappropriate or Offensive Content</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Google values diversity and respect. Ads or destinations that display shocking content or promote hatred, intolerance, discrimination, or violence are strictly prohibited across the entire Google Network.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Examples (non-exhaustive)</div><ul><li>Bullying or intimidation of any individual or group</li><li>Racial, ethnic, gender, or religious discrimination</li><li>Content promoting hate groups or hate group paraphernalia</li><li>Graphic crime scene or accident imagery</li><li>Cruelty to animals or content glorifying violence against animals</li><li>Content promoting self-harm, suicide, or murder</li><li>Extortion, blackmail, or financial coercion</li><li>Sale or trade of endangered species</li><li>Ads using profane or vulgar language</li><li>Content promoting sexual exploitation of minors (CSAM) — zero tolerance</li></ul></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ 2. PROHIBITED PRACTICES ═══════════════════ -->
+  <span class="section-anchor" id="pol-practices"></span>
+  <div class="pcat-header">
+    <div class="pcat-icon amber">⚠️</div>
+    <div><div class="pcat-title">Prohibited Practices</div><div class="pcat-subtitle">Things you cannot do when running ads on the Google Network</div></div>
+  </div>
+  <div class="pcat-intro amber-accent">Beyond what you advertise, Google also restricts how you advertise. These practices relate to ad behavior, data handling, and advertiser honesty regardless of the product being promoted.</div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-amber">Practice</span><span class="policy-item-name">Abusing the Ad Network</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Ads across the Google Network must be useful, varied, relevant, and safe for users. Advertisers must not attempt to trick or circumvent Google's ad review processes through their ads, content, or destinations.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Examples (non-exhaustive)</div><ul><li>Promoting content that contains malware or badware</li><li>"Cloaking" — hiding the true destination that users are directed to</li><li>"Arbitrage" — running ads on sites built solely to display more ads</li><li>"Bridge" or "gateway" pages designed only to redirect users elsewhere</li><li>Advertising primarily to gain social network endorsements from the user</li><li>"Gaming" or manipulating Google's ad review systems</li><li>Excessive or abusive use of Google Ads scripts</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-amber">Practice</span><span class="policy-item-name">Irresponsible Data Collection & Use</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Google requires that user information be handled with transparency, care, and proper security. Advertisers must not misuse user data, collect it for unclear purposes, or gather it without appropriate disclosures. Additional policies apply when using personalized advertising features including remarketing and custom audiences.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Sensitive data requiring careful handling</div><ul><li>Full name, email address, mailing address, phone number</li><li>National identity, pension, social security, tax ID, health care, or driver's license numbers</li><li>Birth date or mother's maiden name combined with any of the above</li><li>Financial status, political affiliation, sexual orientation, race or ethnicity, religion</li></ul></div>
+      <div class="policy-examples"><div class="policy-examples-label">Prohibited irresponsible practices</div><ul><li>Collecting credit card information over non-secure (non-HTTPS) servers</li><li>Promotions that claim to know a user's sexual orientation or financial status</li><li>Violating interest-based advertising and remarketing policies</li><li>Using customer match data without explicit user consent</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-amber">Practice</span><span class="policy-item-name">Misrepresentation</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Ads or destinations that deceive users by excluding relevant product information or providing misleading information about products, services, and businesses undermine user trust in the Google Ads platform.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Examples (non-exhaustive)</div><ul><li>Omitting or obscuring billing details: how, what, and when users will be charged</li><li>Obscuring charges for financial services: interest rates, fees, and penalties</li><li>Failing to display required tax/license numbers, contact info, or physical address</li><li>Making offers that aren't actually available</li><li>Misleading or unrealistic claims regarding weight loss or financial gain</li><li>Collecting donations under false pretenses</li><li>"Phishing" — falsely impersonating a reputable company to obtain personal or financial information</li><li>Promoting "get-rich-quick" schemes or unsubstantiated miracle cures</li></ul></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ 3. RESTRICTED CONTENT ═══════════════════ -->
+  <span class="section-anchor" id="pol-restricted"></span>
+  <div class="pcat-header">
+    <div class="pcat-icon blue">🔒</div>
+    <div><div class="pcat-title">Restricted Content & Features</div><div class="pcat-subtitle">Content that may be advertised, but only under specific conditions and with limitations</div></div>
+  </div>
+  <div class="pcat-intro blue-accent">These content categories are legally or culturally sensitive. Google allows their promotion on a limited basis. Ads may not show to every user in every location, and advertisers may need to meet additional requirements or obtain Google certification before their ads can run.</div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-blue">Restricted</span><span class="policy-item-name">Ad Protections for Children & Teens</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Google's child and teen ad policies work across multiple policy categories — alcohol, gambling, HFSS food — to provide strong protections for younger audiences. All advertisers must follow local legal requirements for advertising to users under 18.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Key requirements</div><ul><li>Ads must never be targeted at minors</li><li>Ad personalization must be disabled for users identified as under 18</li><li>Alcohol, gambling, and HFSS food ads are subject to additional child safety rules in all regions</li><li>Advertisers must comply with all local laws on advertising to under-18 audiences</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-blue">Restricted</span><span class="policy-item-name">High Fat, Sugar & Salt (HFSS) Food & Beverages</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Google restricts HFSS food and beverage advertising on the Google Display Network and YouTube in the UK and EU. Advertisers must self-declare that they are running HFSS campaigns. Nutrient levels are assessed on a per-100g and per-serving basis.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Generally allowed non-HFSS foods</div><ul><li>100% juice with no added sugar</li><li>Plain fresh or frozen fruits and vegetables</li><li>Low or nonfat plain milk</li><li>Dry beans, lentils, plain nuts and seeds</li><li>Restaurant delivery services or review websites not directly promoting HFSS products</li></ul></div>
+      <div class="policy-examples"><div class="policy-examples-label">HFSS compliance steps</div><ul><li>Submit the HFSS self-declaration form to Google before launching campaigns</li><li>Most applications reviewed within 3 business days</li><li>Research and comply with local HFSS regulations for all targeted regions independently</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-blue">Restricted</span><span class="policy-item-name">Alcohol</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Alcohol advertising is allowed in many regions but must comply with local laws, target only users of legal drinking age, and must not be shown in countries where alcohol advertising is prohibited. Ads must never target minors.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Restricted beverages (non-exhaustive)</div><ul><li>Beer, wine, sake, spirits and hard alcohol</li><li>Champagne and fortified wine</li><li>Non-alcoholic beer, wine, and distilled spirits (treated similarly in many markets)</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-blue">Restricted</span><span class="policy-item-name">Sexual Content</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Certain sexual content in ads and destinations is only allowed in very limited scenarios based on user search queries, user age, and local laws. Non-family-safe content is prohibited in image, video, and other non-text ad formats. Ads must never target minors.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Restricted examples (non-exhaustive)</div><ul><li>Visible genitalia and female breasts</li><li>Hook-up dating services</li><li>Sex toys and accessories</li><li>Strip clubs and adult entertainment venues</li><li>Sexually suggestive live chat services</li><li>Models in sexualized poses</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-blue">Restricted</span><span class="policy-item-name">Gambling & Games</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Gambling-related ads are only allowed if the advertiser has received proper Google Ads certification. Ads must target approved countries, link to landing pages with responsible gambling information, and never target minors. Advertisers must check local regulations for all targeted regions.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Restricted gambling content (non-exhaustive)</div><ul><li>Physical casinos and online casino games</li><li>Sites where users can bet on poker, bingo, roulette, or sports events</li><li>National or private lotteries</li><li>Sports odds aggregator sites</li><li>Sites offering bonus codes or promotional offers for gambling</li><li>Online educational materials for casino-based games</li><li>Non-casino-based cash game sites</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-blue">Restricted</span><span class="policy-item-name">Healthcare & Medicines</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Healthcare and medicines advertising must follow applicable laws and industry standards. Some healthcare content cannot be advertised at all; others require advertiser certification with Google and may only target approved locations. Ads labeled "Eligible (limited)" can run in allowed locations only.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Restricted healthcare content (non-exhaustive)</div><ul><li>Clinical trial recruitment campaigns</li><li>HIV home tests</li><li>Addiction services</li><li>Prescription drug services</li><li>Dietary supplements with unsubstantiated health claims</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-blue">Restricted</span><span class="policy-item-name">Financial Products & Services</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Financial product and service ads must comply with state and local regulations for all targeted locations. Specific disclosures required by local law must be included. Google considers financial products to include anything related to management or investment of money and cryptocurrencies.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Restricted financial products (non-exhaustive)</div><ul><li>Personal loans (must disclose APR and lender information)</li><li>Loan modification services</li><li>Credit repair services</li><li>Cryptocurrency and related products (may require Google certification)</li><li>Investment advisory and wealth management services</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-blue">Restricted</span><span class="policy-item-name">Political Content</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Political ads must comply with local campaign and election laws for all targeted regions, including legally mandated election "silence periods" during which political advertising is prohibited. Advertisers must verify their identity with Google before running political ads.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Examples of political content</div><ul><li>Promotion of political parties or individual candidates</li><li>Political issue advocacy</li><li>Content related to elections, referendums, or ballot measures</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-blue">Restricted</span><span class="policy-item-name">Cryptocurrencies & Related Products</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Due to the complex and evolving nature of cryptocurrency regulations, Google allows certain categories of crypto-related products and services to be advertised with or without certification, in limited circumstances. Most advertisers must be certified by Google.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Requirements for crypto advertisers</div><ul><li>Most crypto advertisers must obtain Google certification before running ads</li><li>Ads must comply with local regulations for all targeted regions</li><li>Crypto exchange ads must be licensed in the regions where they operate</li><li>DeFi trading protocol ads may require certification in certain markets</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-blue">Restricted</span><span class="policy-item-name">Copyrights</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Google abides by local copyright laws and protects copyright holders. Ads may not use copyrighted content without authorization. Advertisers who are legally authorized to use copyrighted content may apply for certification. Unauthorized copyright use may be reported to Google.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Restricted copyrighted content (non-exhaustive)</div><ul><li>Sites or apps facilitating unauthorized offline distribution of copyrighted content</li><li>Unauthorized software that captures, copies, or provides access to copyrighted material</li><li>Streaming sites distributing copyrighted films, music, or software without authorization</li></ul></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ 4. EDITORIAL & TECHNICAL ═══════════════════ -->
+  <span class="section-anchor" id="pol-editorial"></span>
+  <div class="pcat-header">
+    <div class="pcat-icon green">✏️</div>
+    <div><div class="pcat-title">Editorial & Technical Requirements</div><div class="pcat-subtitle">Quality standards for your ads, destination websites, and apps</div></div>
+  </div>
+  <div class="pcat-intro green-accent">Google requires all ads, assets, and destinations to meet high standards of quality, clarity, and functionality. Violations here will not lead to immediate account suspension — a minimum 7-day warning is issued first.</div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-green">Editorial</span><span class="policy-item-name">Style, Spelling & Professionalism</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Google only allows ads that are clear, easy to interact with, and professionally presented. Correct spelling, proper grammar, and standard capitalization are required across all ad formats.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Violations (non-exhaustive)</div><ul><li>Overly generic ads with vague phrases like "Buy products here"</li><li>Gimmicky use of characters: FREE, f-r-e-e, F₹€€!!</li><li>Excessive capitalization: "BEST DEALS TODAY!!!"</li><li>Repetition of words within the same asset or across assets in the same ad group</li><li>Unacceptable spacing or unusual character spacing</li><li>Phone numbers placed directly in ad text (not permitted in most formats)</li><li>Business name field containing promotional language</li><li>Ads inconsistent with the clear, informational style of Google Search results</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-green">Editorial</span><span class="policy-item-name">Destination & Landing Page Requirements</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Destination websites and apps must offer unique value to users and be functional, useful, and easy to navigate. Display URLs must accurately reflect the actual landing page URL. Only one website domain is permitted per ad group.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Violations (non-exhaustive)</div><ul><li>Display URLs that don't accurately reflect the actual landing page</li><li>Sites or apps that are "under construction" or incomplete</li><li>Sites that aren't viewable in commonly used browsers</li><li>Sites that disable the browser's back button</li><li>Pages with no substantive content (arbitrage pages)</li><li>Landing pages with excessive interstitials or pop-ups</li><li>Using more than one display URL domain in a single ad group</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-green">Technical</span><span class="policy-item-name">Technical Ad Requirements</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">All ads, assets, and destinations must meet technical specifications. Google requires that ads are useful, appealing, and engaging from a technical standpoint. Specific requirements vary by ad format — text, display, video, HTML5.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Violations (non-exhaustive)</div><ul><li>Exceeding account limits for ads and other content</li><li>Ad or destination content in an unsupported targeting language</li><li>HTML5 ads that don't function properly or appear blank</li><li>Images that are sideways, upside down, or don't fill the chosen size</li><li>Videos with poor sound quality or blurry visuals</li><li>Videos changed to "deleted," "private," or "members only" after ad submission</li><li>Videos not available in a country targeted by the ad</li><li>Uploading videos in formats not supported by Google Ads or YouTube</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-green">Technical</span><span class="policy-item-name">Ad Format-Specific Requirements</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Each ad format has specific requirements that advertisers must review and comply with. Non-family-safe content is prohibited in image, video, and other non-text ad formats. Message assets (as of October 2025) must be verified by Google before they can serve.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Format-specific requirements</div><ul><li>Character limits for headline and body text (format-dependent)</li><li>Image size and aspect ratio requirements (e.g., 1.91:1 for responsive display)</li><li>File size limits for image and HTML5 ads</li><li>Video length limits by placement type</li><li>Images must not expand beyond the frame or encroach on the webpage</li><li>Message assets must be verified; unverified message assets will not serve (enforced from Oct 30, 2025)</li><li>For message assets: "Conversions" must be selected as the bid goal</li></ul></div>
+    </div>
+  </div>
+
+  <div class="policy-item">
+    <div class="policy-item-header" onclick="togglePolicy(this)">
+      <div class="policy-item-left"><span class="policy-item-tag tag-green">Technical</span><span class="policy-item-name">Google Ads Scripts Policy</span></div>
+      <div class="policy-item-chevron"><svg width="10" height="10" fill="none" viewBox="0 0 10 10" stroke="#1C1C1A" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m2 3.5 3 3 3-3"/></svg></div>
+    </div>
+    <div class="policy-item-body">
+      <div class="policy-item-desc">Google Ads scripts may only be used for legitimate business purposes. Misuse of scripts can result in account suspension.</div>
+      <div class="policy-examples"><div class="policy-examples-label">Prohibited script behaviors</div><ul><li>Using scripts to circumvent restrictions or limits on Google Ads usage</li><li>Using unsupported methods to access Google Ads scripts</li><li>Excessive or abusive use of scripts, including unreasonable request volumes</li><li>Scripts that modify, disrupt, or disable Google Ads platform features or functionality</li><li>Reading data for more than 1 million entities without following best practices</li></ul></div>
+    </div>
+  </div>
+
+</div><!-- /policy-body -->
+
+<!-- ═══════════════════════════════════
+     TERMS & CONDITIONS
+═══════════════════════════════════ -->
+<div class="tnc-section" id="pol-tnc">
+  <div class="tnc-inner">
+    <div class="section-eyebrow">Legal framework</div>
+    <h2 class="section-title">Google Ads Terms & Conditions</h2>
+    <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-top:12px;max-width:680px;">By advertising on Hearth & Flame through Google Ads, you agree to be bound by Google's Advertising Terms of Service and all applicable policies listed on this page. The following summarizes key obligations and rights for all advertisers.</p>
+
+    <div class="enforcement-bar">
+      <div class="enforcement-bar-icon">⚖️</div>
+      <div>
+        <div class="enforcement-bar-title">Policy enforcement is ongoing, automated, and binding</div>
+        <div class="enforcement-bar-text">Google uses a combination of AI systems and human evaluators to monitor all ads continuously. Violations may result in immediate ad disapproval, account warnings, or permanent account suspension for severe or repeated offences.</div>
+      </div>
+      <a href="https://support.google.com/adspolicy/answer/6008942" target="_blank" class="enforcement-bar-link">View official policies →</a>
+    </div>
+
+    <div class="tnc-grid">
+      <div class="tnc-card">
+        <div class="tnc-card-num">T&C 01 — Legal Compliance</div>
+        <div class="tnc-card-title">Advertiser Legal Obligations</div>
+        <div class="tnc-card-body">Advertisers must comply with all applicable laws and regulations in any location their ads target. Google Ads policies are in addition to — not a substitute for — local legal requirements. It is the advertiser's sole responsibility to research and comply with regional laws including GDPR, CCPA, consumer protection regulations, and sector-specific advertising rules.</div>
+      </div>
+      <div class="tnc-card">
+        <div class="tnc-card-num">T&C 02 — Policy Changes</div>
+        <div class="tnc-card-title">Policy Updates & Amendments</div>
+        <div class="tnc-card-body">Google regularly reviews and updates its advertising policies in response to changes in online trends, industry norms, legislation, and platform practices. Advertisers are expected to monitor the Google Ads Policy Change Log and stay current with all updates. Continued use of Google Ads constitutes acceptance of updated policies.</div>
+      </div>
+      <div class="tnc-card">
+        <div class="tnc-card-num">T&C 03 — Ad Disapprovals</div>
+        <div class="tnc-card-title">Disapproval & Appeal Process</div>
+        <div class="tnc-card-body">When an ad is disapproved, Google provides notification through the advertiser's account with specific reasons. Advertisers may fix the violating ad and resubmit, or appeal the decision via the Policy Manager. Account suspensions may be appealed through the dedicated suspension appeal process. A minimum 7-day warning is issued before suspension for editorial violations.</div>
+      </div>
+      <div class="tnc-card">
+        <div class="tnc-card-num">T&C 04 — Account Suspension</div>
+        <div class="tnc-card-title">Suspension for Violations</div>
+        <div class="tnc-card-body">Google may suspend advertiser accounts for repeat or egregious policy violations. A strike system is applied for repeat offenders. Severe violations — including promotion of illegal content, malware, or CSAM — may result in immediate permanent suspension without prior warning. All suspension decisions may be appealed through the Google Ads suspension help portal.</div>
+      </div>
+      <div class="tnc-card">
+        <div class="tnc-card-num">T&C 05 — Language & Jurisdiction</div>
+        <div class="tnc-card-title">Official Language & Jurisdiction</div>
+        <div class="tnc-card-body">The English version of Google Ads policies is the official, authoritative version used for all policy enforcement. Translated versions are provided for convenience only and do not alter the content of the policies. In any case of ambiguity between a translation and the English version, the English version controls.</div>
+      </div>
+      <div class="tnc-card">
+        <div class="tnc-card-num">T&C 06 — Advertiser Verification</div>
+        <div class="tnc-card-title">Identity & Verification Requirements</div>
+        <div class="tnc-card-body">Google requires advertiser identity verification for certain categories including political content, financial services, healthcare, and others. Advertisers must provide accurate business information, verifiable contact details, and valid payment information. Providing false information during verification is a policy violation and may result in permanent account termination.</div>
+      </div>
+      <div class="tnc-card">
+        <div class="tnc-card-num">T&C 07 — Limited Ad Serving</div>
+        <div class="tnc-card-title">Impression Limits & Qualified Advertiser Status</div>
+        <div class="tnc-card-body">Certain ad formats and features are subject to access restrictions. Ads with higher potential for abuse or poor user experience may have limited impressions until the advertiser achieves "qualified advertiser" status. Advanced formats may require meeting specific requirements or completing certification before they become available.</div>
+      </div>
+      <div class="tnc-card">
+        <div class="tnc-card-num">T&C 08 — Personalized Advertising</div>
+        <div class="tnc-card-title">Personalized Ads & Remarketing</div>
+        <div class="tnc-card-body">Use of personalized advertising — including remarketing, customer match, and custom audiences — is subject to additional data policies. Advertisers using these features must have explicit user consent where required by law (e.g., under GDPR). Customer match data must be used ethically and only for permitted audience creation and exclusion purposes.</div>
+      </div>
+      <div class="tnc-card">
+        <div class="tnc-card-num">T&C 09 — Display Network</div>
+        <div class="tnc-card-title">Google Display Network Rules</div>
+        <div class="tnc-card-body">Display & Video 360 users must comply with this Google Ads policy and also visit the Display & Video 360 help center for additional restrictions. Display ads on this site are subject to all standard Google Ads policies and any publisher-specific restrictions set by Hearth & Flame as an AdSense publisher.</div>
+      </div>
+      <div class="tnc-card">
+        <div class="tnc-card-num">T&C 10 — Transparency</div>
+        <div class="tnc-card-title">Advertiser Transparency Requirements</div>
+        <div class="tnc-card-body">As of May 2025, Google requires all advertisers to disclose payment entities in their ads. Advertisers must not misrepresent the entity paying for advertising. Political and election-related advertisers face additional transparency requirements including disclosure of the entity behind the ad and its funding source.</div>
+      </div>
+    </div>
+
+    <!-- Enforcement section -->
+    <span class="section-anchor" id="pol-enforcement"></span>
+    <div style="margin-top:60px;">
+      <div class="section-eyebrow">Enforcement & violations</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;margin:12px 0 16px;letter-spacing:-.3px;">How Google enforces these policies</h3>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;max-width:700px;margin-bottom:32px;">Google uses a combination of automated AI systems and specialist human reviewers to evaluate ads continuously. Enforcement actions are proportional to the severity and frequency of violations.</p>
+    </div>
+
+    <div class="enf-cards">
+      <div class="enf-card">
+        <div class="enf-card-icon">🤖</div>
+        <div class="enf-card-title">Automated AI review</div>
+        <div class="enf-card-body">Google AI, modeled on human reviewer decisions, scans all submitted ads and destinations continuously. Most ads are reviewed within 1 business day. Automated systems detect the majority of policy violations at scale.</div>
+      </div>
+      <div class="enf-card">
+        <div class="enf-card-icon">👤</div>
+        <div class="enf-card-title">Human evaluation</div>
+        <div class="enf-card-body">Complex, nuanced, or severe cases are reviewed by specially-trained Google policy experts who evaluate context and intent beyond what automated detection can assess. High-stakes cases always involve human review.</div>
+      </div>
+      <div class="enf-card">
+        <div class="enf-card-icon">⚡</div>
+        <div class="enf-card-title">Strike system</div>
+        <div class="enf-card-body">Repeat offenders accumulate strikes with escalating consequences: ad disapprovals → account warnings (7-day notice for editorial) → temporary suspension → permanent account ban for severe repeat violations.</div>
+      </div>
+    </div>
+
+    <div class="policy-cta-bar">
+      <div>
+        <div class="policy-cta-bar-title">Questions about your ads or a disapproval decision?</div>
+        <div class="policy-cta-bar-sub">Visit the official Google Ads Policy Center for current policies, the Policy Manager, and all appeal tools.</div>
+      </div>
+      <div class="policy-cta-bar-btns">
+        <a href="https://support.google.com/adspolicy/answer/6008942" target="_blank" class="cta-btn-primary">Policy Center →</a>
+        <a href="https://ads.google.com/aw/policymanager/issues" target="_blank" class="cta-btn-secondary">Policy Manager →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="#" class="nav-logo" style="text-decoration:none;">Hearth <span style="color:var(--rust)">&</span> Flame</a>
+      <p class="footer-brand-desc">Celebrating the joy of home cooking — one recipe at a time, from every corner of the world.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Explore</div>
+      <ul class="footer-links">
+        <li><a href="#">All Recipes</a></li><li><a href="#">Techniques</a></li><li><a href="#">Seasonal</a></li><li><a href="#">Cuisines</a></li><li><a href="#">Meal Plans</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#">About Us</a></li><li><a href="#">Our Chefs</a></li><li><a href="#">Blog</a></li><li><a href="#">Press</a></li><li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#ads-policies">Ads Policies</a></li><li><a href="#pol-tnc">Terms & Conditions</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Cookie Policy</a></li><li><a href="https://support.google.com/adspolicy" target="_blank">Google Ads Help</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hearth & Flame. All rights reserved.</span>
+    <span>Ads served via Google Ads · <a href="#ads-policies" style="color:var(--rust);">View full ad policies</a></span>
+  </div>
+</footer>
+
+<script>
+function togglePolicy(header) {
+  const body = header.nextElementSibling;
+  const isOpen = header.classList.contains('open');
+  header.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+
+// Tab highlighting on scroll
+const tabLinks = document.querySelectorAll('.ptab-link');
+tabLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    tabLinks.forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
 </html>
